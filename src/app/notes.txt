@@ -1,0 +1,20 @@
+1 Parent child components communication
+    --------------------------------------
+    1 Child to Parent - @Output decorator
+
+    Parent -header component(toggle)
+    Child - side-bar component (app.component)
+
+    => EventEmitter -Used to generate userdefined events
+                -Its a class
+                -emit() is a method of EventEmitter class
+
+        i)header.html button (click)="menuIconClick()"
+        ii)header.ts- Userdefined event - @Output() toggle=new EventEmitter();
+        iii)app.html- <app-header (toggle)="sidebarToggle()">
+        iV)app.ts- sidebar:boolean=true
+        v)app.html- <mat-drawer mode="side" [opened]="sidebar">
+
+    2 Parent to Child component communication
+     
+     @Input() decorator
